@@ -15,6 +15,7 @@ function Header() {
     .then((data) => {
       if(!data.errors){
         setResults(data.results)
+        console.log(data)
       }
     })
   }
