@@ -1,18 +1,20 @@
-import { useState } from "react"
-import { useContextMovie } from "./ContextApi";
+import React from 'react'
 
-
-
-export const Reducer = (action) => {
-    
-    const {results,setResults} = useContextMovie()
-
+function Reducer(state,action) {
     switch (action.type) {
-        case "deneme":
-            
-            break;
-    
+        case "Add_Movie_Watchlist":
+            return {
+                ...state,
+                watchList : [action.payload , ...state.watchList]
+            }
+        case "Add_Movie_Watched":
+            return {
+                ...state,
+                watched : [action.payload , ...state.watched]
+            }
         default:
-            break;
+            return state
     }
 }
+
+export default Reducer

@@ -36,7 +36,7 @@ function Header() {
 
   return (
     <div className="w-full h-20 p-2 text-lg flex justify-around items-center text-white bg-gradient-to-r from-[#0e0116] to-[#0c0523ee]">
-      <Link to="/"><div className="hover:text-[#aa00ff]"> <i className="fa-solid fa-video"></i> MovieDB</div></Link>
+      <Link to="/"><div className="hover:text-[#aa00ff]" onClick={()=>{setQuery("")}} > <i className="fa-solid fa-video"></i> MovieDB</div></Link>
       <div className="flex justify-evenly items-center w-1/6">
         <Link to="/watched"><div className="px-3 py-1 bg-[#8b18c49d] rounded-lg hover:bg-[#aa00ff] hover:text-white "><i class="fa-solid fa-puzzle-piece"></i> Watched </div></Link>
         <Link to="/watchlist"> <div className="px-3 py-1 bg-[#8b18c49d] rounded-lg hover:bg-[#aa00ff] hover:text-white"><i class="fa-solid fa-square-plus"></i> Watchlist</div></Link>

@@ -6,7 +6,7 @@ function MovieCard(props) {
 
 
   return (
-    <div className='group w-72 max-h-[34rem] relative m-3 border-1 bg-gradient-to-r from-[#1d032c] to-[#150c31ee] text-white border-[#aa00ff5b] rounded-3xl'>
+    <div className='group ease-in-out w-72 max-h-[34rem] relative m-3 border-1 bg-gradient-to-r from-[#1d032c] to-[#150c31ee] text-white border-[#aa00ff5b] rounded-3xl'>
         <div className='h-96 mt-2 text-center flex justify-center '>
             <img className='rounded-2xl' src={props.img ? `https://image.tmdb.org/t/p/w200${props.img}` : "https://cdn2.vectorstock.com/i/1000x1000/53/36/vintage-cinema-poster-vector-20815336.jpg"} alt="deneme" />
         </div>
@@ -28,10 +28,7 @@ function MovieCard(props) {
             <div className='px-3 py-1 mb-3  bg-gradient-to-r from-[#311541] to-[#3b2861] rounded-lg hover:bg-gradient-to-r hover:from-[#6d1f9b] hover:to-[#5e4199] cursor-pointer'><i class="fa-solid fa-thumbs-up"></i> Watched</div>
             
         </div>
-        <div className='hidden group-hover:inline absolute top-3 right-5 '>
-            <i className="fa-solid fa-star text-yellow-500 "></i>
-            <span className='text-yellow-500 ml-2'>7.9</span>
-        </div>
+
     </div>
   )
 }

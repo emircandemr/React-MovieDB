@@ -8,7 +8,7 @@ import { Reducer } from "./context/Reducer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <Context reducer={Reducer}>
+    <Context>
         <BrowserRouter>
         <App />
         </BrowserRouter>
