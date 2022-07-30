@@ -2,9 +2,10 @@ import React from 'react'
 import { useContextMovie } from '../context/ContextApi'
 
 function MovieCard(props) {
+  const {addMovieWatchList,addMovieWatched,watchList,watched} = useContextMovie();
+
+  const storedMovie = watchList.find( (o) => o.id === props.movie.id) || watched.find( (o) => o.id === props.movie.id) 
     
-
-
   return (
     <div className='group ease-in-out w-72 max-h-[34rem] relative m-3 border-1 bg-gradient-to-r from-[#1d032c] to-[#150c31ee] text-white border-[#aa00ff5b] rounded-3xl'>
         <div className='h-96 mt-2 text-center flex justify-center '>
@@ -24,8 +25,8 @@ function MovieCard(props) {
             </div>
         </div>
         <div className='flex justify-around h-12 items-center '>
-            <div className='px-3 py-1 mb-3  bg-gradient-to-r from-[#311541] to-[#3b2861] rounded-lg hover:bg-gradient-to-r hover:from-[#6d1f9b] hover:to-[#5e4199] cursor-pointer'><i class="fa-solid fa-bookmark"></i> Watchlist </div>
-            <div className='px-3 py-1 mb-3  bg-gradient-to-r from-[#311541] to-[#3b2861] rounded-lg hover:bg-gradient-to-r hover:from-[#6d1f9b] hover:to-[#5e4199] cursor-pointer'><i class="fa-solid fa-thumbs-up"></i> Watched</div>
+            <button disabled={storedMovie} className={`px-3 py-1 mb-3  bg-gradient-to-r from-[#311541] to-[#3b2861] rounded-lg hover:bg-gradient-to-r  ${storedMovie ? "opacity-30" : "cursor-pointer hover:from-[#6d1f9b] hover:to-[#5e4199]"} `} onClick={()=> {addMovieWatchList(props.movie)}}  ><i class="fa-solid fa-bookmark"></i> Watchlist </button>
+            <button disabled={storedMovie} className={`px-3 py-1 mb-3  bg-gradient-to-r from-[#311541] to-[#3b2861] rounded-lg hover:bg-gradient-to-r  ${storedMovie ? "opacity-30" : "cursor-pointer hover:from-[#6d1f9b] hover:to-[#5e4199]"} `} onClick={() => {addMovieWatched(props.movie)}}><i class="fa-solid fa-thumbs-up"></i> Watched</button>
             
         </div>
 
