@@ -43,9 +43,9 @@ function Header() {
       </div>
       <div className="flex justify-around items-center w-2/5">
         <input className="w-3/4 rounded-xl text-white px-3 py-1 outline-none bg-[#635b7788]" value={query} type="text" placeholder="Search for movies or TV shows" onChange={onChange} />
-        <div className="flex">
-          <div className="px-3 py-1 mr-5 bg-[#8b18c49d] rounded-lg hover:bg-[#aa00ff] cursor-pointer">Sign Up</div>
-          <div className="px-3 py-1 bg-[#8b18c49d] rounded-lg hover:bg-[#aa00ff] cursor-pointer">Login</div>
+        <div className="flex ml-5 items-center">
+          <span className="text-center items-center">emircanndemr@gmail.com</span>
+          <div className="px-3 py-1 ml-5 bg-[#8b18c49d] rounded-lg hover:bg-[#aa00ff] cursor-pointer">Logout</div>
         </div>
       </div>
     </div>
@@ -53,3 +53,4 @@ function Header() {
 }
 
 export default Header;
+// 

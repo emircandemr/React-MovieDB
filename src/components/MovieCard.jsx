@@ -7,7 +7,7 @@ function MovieCard(props) {
   const storedMovie = watchList.find( (o) => o.id === props.movie.id) || watched.find( (o) => o.id === props.movie.id) 
     
   return (
-    <div className='group ease-in-out w-72 max-h-[34rem] relative m-3 border-1 bg-gradient-to-r from-[#1d032c] to-[#150c31ee] text-white border-[#aa00ff5b] rounded-3xl'>
+    <div className='group ease-in-out w-72 max-h-[34rem] relative m-3 border-1 bg-gradient-to-r from-[#1d032c] to-[#150c31ee] bg-[#050e1d] text-white border-[#aa00ff5b] rounded-3xl'>
         <div className='h-96 mt-2 text-center flex justify-center '>
             <img className='rounded-2xl' src={props.img ? `https://image.tmdb.org/t/p/w200${props.img}` : "https://cdn2.vectorstock.com/i/1000x1000/53/36/vintage-cinema-poster-vector-20815336.jpg"} alt="deneme" />
         </div>
