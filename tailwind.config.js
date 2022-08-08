@@ -6,7 +6,10 @@ module.exports = {
     extend: {
       color:{
         "deneme" : "#08000d"
-      }
+      },
+      fontFamily: {
+        'Pacifico': ['Pacifico', "cursive"] 
+      },
     },
   },
   plugins: [],

@@ -7,13 +7,14 @@ import Watched from "./components/Watched";
 import Watchlist from "./components/Watchlist";
 import Input from "./components/loginPage/input";
 import Register from "./components/loginPage/register";
+import Home from "./components/loginPage/home";
 
 
 const App = () => {
   return (
       <div>
         <Routes>
-          <Route path="/register" element={<Register/>} />
+          <Route path="/register" element={<Home/>} />
           <Route path="/" element={<ListItem/>} />
           <Route path="/watched" element={<Watched/>} />
           <Route path="/watchlist" element={<Watchlist/>}/>
