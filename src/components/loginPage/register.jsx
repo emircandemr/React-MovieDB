@@ -76,7 +76,7 @@ function Register() {
             <label htmlFor="remember" className="ml-2 text-sm font-medium text-gray-900">I agree with terms conditions and privacy policy</label>
         </div>  
         <button className='bg-[#082a4e] text-white py-3 px-4 w-1/2 rounded-xl' type='submit'  >Create Account</button>
-        <div className='mt-6 text-gray-600'> Already have an account ? <Link to="/login" className='text-[#050e1d] px-2 font-bold cursor-pointer'>Sign In</Link></div>
+        <div className='mt-6 text-gray-600'> Already have an account ? <Link to="/home/login" className='text-[#050e1d] px-2 font-bold cursor-pointer'>Sign In</Link></div>
     </form>
   )
 }

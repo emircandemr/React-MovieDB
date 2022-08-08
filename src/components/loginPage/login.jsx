@@ -46,7 +46,7 @@ return (
         <label htmlFor="remember" className="ml-2 text-sm font-medium text-gray-900">Remember Me</label>
     </div>
     <button className='bg-[#082a4e] text-white py-3 px-4 w-10/12 sm:w-1/2 rounded-xl' >Login</button>
-    <div className='mt-6 text-gray-600'> New Here ? <Link to="/register" className='text-[#050e1d] px-2 font-bold cursor-pointer'>Create an Account</Link></div>
+    <div className='mt-6 text-gray-600'> New Here ? <Link to="/home/register" className='text-[#050e1d] px-2 font-bold cursor-pointer'>Create an Account</Link></div>
 </form>
 )
 }
