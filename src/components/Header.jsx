@@ -1,11 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useContextMovie } from "../context/ContextApi";
+import { useSelector } from 'react-redux'
+import { logOut } from './loginPage/fire'
+import {logout as logoutReducer} from "./loginPage/store/authReducer"
+import {useDispatch} from "react-redux";
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
 
   const [query, setQuery] = useState("");
   const {results,setResults,addMovieWatchList} = useContextMovie()
+  
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const {user} = useSelector(state => state.auth)
+
+  const handleLogout = async () => {
+
+      await logOut()
+      dispatch(logoutReducer())
+      navigate("/home/login" , {
+          replace : true
+        })
+  }   
 
 
   const onChange = (e) => {
@@ -35,17 +53,17 @@ function Header() {
   }
 
   return (
-    <div className="w-full h-20 p-2 text-lg flex justify-around items-center text-white bg-gradient-to-r from-[#0e0116] to-[#0c0523ee]">
-      <Link to="/"><div className="hover:text-[#aa00ff]" onClick={()=>{setQuery("")}} > <i className="fa-solid fa-video"></i> MovieDB</div></Link>
+    <div className="w-full h-20 p-2 text-lg flex justify-around items-center text-white bg-gradient-to-r from-[#0f0f0f] to-[#131210ee] ">
+      <Link to="/"><div className="hover:text-[#aa8c4fee] " onClick={()=>{setQuery("")}} > <i className="fa-solid fa-video"></i> MovieDB</div></Link>
       <div className="flex justify-evenly items-center w-1/6">
-        <Link to="/watched"><div className="px-3 py-1 bg-[#8b18c49d] rounded-lg hover:bg-[#aa00ff] hover:text-white "><i class="fa-fw far fa-eye"></i> Watched </div></Link>
-        <Link to="/watchlist"> <div className="px-3 py-1 bg-[#8b18c49d] rounded-lg hover:bg-[#aa00ff] hover:text-white"><i class="fa-solid fa-square-plus"></i> Watchlist</div></Link>
+        <Link to="/watched"><div className="px-3 py-1 bg-gradient-to-r from-[#a07b025b] to-[#7a62115b]  rounded-lg hover:bg-[#755d2dee] hover:text-white "><i class="fa-fw far fa-eye"></i> Watched </div></Link>
+        <Link to="/watchlist"> <div className="px-3 py-1 bg-gradient-to-r from-[#a07b025b] to-[#7a62115b]  rounded-lg hover:bg-[#755d2dee] hover:text-white"><i class="fa-solid fa-square-plus"></i> Watchlist</div></Link>
       </div>
-      <div className="flex justify-around items-center w-2/5">
-        <input className="w-3/4 rounded-xl text-white px-3 py-1 outline-none bg-[#635b7788]" value={query} type="text" placeholder="Search for movies or TV shows" onChange={onChange} />
-        <div className="flex ml-5 items-center">
-          <span className="text-center items-center">emircanndemr@gmail.com</span>
-          <div className="px-3 py-1 ml-5 bg-[#8b18c49d] rounded-lg hover:bg-[#aa00ff] cursor-pointer">Logout</div>
+      <div className="flex justify-end items-center w-2/5">
+        <input className="w-3/4 rounded-xl mr-3 text-white px-3 py-1 outline-none bg-[#776c5b88]" value={query} type="text" placeholder="Search for movies or TV shows" onChange={onChange} />
+        <div className="flex items-center">
+          {user.email ? <span className="text-center ml-2  items-center">{user.email}</span> : ""}
+          <div className="px-3 py-1 ml-5 bg-gradient-to-r from-[#a07b025b] to-[#7a62115b]  rounded-lg hover:bg-[#755d2dee] cursor-pointer" onClick={handleLogout}>{user ? "Logout" : "Login" }</div>
         </div>
       </div>
     </div>
@@ -53,4 +71,5 @@ function Header() {
 }
 
 export default Header;
-// 
+//from-[#0e0116] to-[#0c0523ee] 
+// bg-[#8b18c49d]

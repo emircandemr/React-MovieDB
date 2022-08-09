@@ -3,11 +3,15 @@ import React from 'react'
 import Input from './input'
 import { Link } from "react-router-dom";
 import { inputSchemas } from './schemas';
-
+import {registerHandler} from "./fire"
+import { useNavigate } from 'react-router-dom';
+import {useDispatch} from "react-redux";
 
 function Register() {
 
-  
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
     const {values , handleSubmit, handleBlur , handleChange , errors ,touched} = useFormik({
         initialValues:{
             username:"",
@@ -17,7 +21,18 @@ function Register() {
         },
         validationSchema:inputSchemas,
     })
+    
+    const submit = async e => {
+      e.preventDefault()
+      const user = await registerHandler(values.email,values.password)
+      if(user){
+        navigate("/home/login" , {
+          replace : true
+        })
+      }
 
+
+    }
 
     const inputs = [
         {
@@ -65,7 +80,7 @@ function Register() {
 
   return (
     <form onSubmit={handleSubmit} className='w-full h-full flex flex-col justify-center items-center '>
-        <h1 className='text-4xl mb-10 font-Pacifico text-[#050e1d]' >Register</h1>
+        <h1 className='text-4xl mb-10 font-Pacifico text-[#131210ee]' >Register</h1>
         {inputs.map((input) => (
           <Input key={input.id} {...input} onBlur={handleBlur} onChange={handleChange} />
         ))}
@@ -75,10 +90,12 @@ function Register() {
             </div>
             <label htmlFor="remember" className="ml-2 text-sm font-medium text-gray-900">I agree with terms conditions and privacy policy</label>
         </div>  
-        <button className='bg-[#082a4e] text-white py-3 px-4 w-1/2 rounded-xl' type='submit'  >Create Account</button>
-        <div className='mt-6 text-gray-600'> Already have an account ? <Link to="/home/login" className='text-[#050e1d] px-2 font-bold cursor-pointer'>Sign In</Link></div>
+        <button className=' bg-gradient-to-r from-[#000000] to-[#131210ee] text-white py-3 px-4 w-1/2 rounded-xl' type='submit' onClick={submit} >Create Account</button>
+        <div className='mt-6 text-gray-600'> Already have an account ? <Link to="/home/login" className='text-yellow-800 hover:text-yellow-900 px-2 font-bold cursor-pointer'>Sign In</Link></div>
     </form>
   )
 }
 
 export default Register
+
+// bg-[#082a4e]

@@ -1,7 +1,11 @@
 import React from 'react'
 import { useFormik } from 'formik';
 import { Link } from "react-router-dom";
-import Input from './input'
+import Input from './input';
+import {useDispatch} from "react-redux";
+import {login as loginReducer} from "./store/authReducer"
+import { loginHandler } from './fire';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const {values , handleSubmit, handleBlur , handleChange} = useFormik({
@@ -11,7 +15,20 @@ function Login() {
     },
 })
 
+const navigate = useNavigate()
+    const dispatch = useDispatch()
 
+    const submit = async e => {
+      e.preventDefault()
+      const user = await loginHandler(values.email,values.password)
+      if(user){
+        dispatch(loginReducer(user));
+        navigate("/" , {
+          replace : true
+        })
+      }
+
+    }
 
 const inputs = [
     {
@@ -35,7 +52,7 @@ const inputs = [
 
 return (
 <form onSubmit={handleSubmit} className='w-full h-full flex flex-col justify-center items-center '>
-    <h1 className='text-4xl mb-10 font-Pacifico text-[#050e1d]' >Sign In</h1>
+    <h1 className='text-4xl mb-10 font-Pacifico text-[#131210ee]' >Sign In</h1>
     {inputs.map((input) => (
       <Input key={input.id} {...input} onBlur={handleBlur} onChange={handleChange} />
     ))}
@@ -45,8 +62,8 @@ return (
         </div>
         <label htmlFor="remember" className="ml-2 text-sm font-medium text-gray-900">Remember Me</label>
     </div>
-    <button className='bg-[#082a4e] text-white py-3 px-4 w-10/12 sm:w-1/2 rounded-xl' >Login</button>
-    <div className='mt-6 text-gray-600'> New Here ? <Link to="/home/register" className='text-[#050e1d] px-2 font-bold cursor-pointer'>Create an Account</Link></div>
+    <button className='bg-gradient-to-r from-[#000000] to-[#131210ee] text-white py-3 px-4 w-10/12 sm:w-1/2 rounded-xl' onClick={submit} >Login</button>
+    <div className='mt-6 text-gray-600'> New Here ? <Link to="/home/register" className='text-yellow-800 hover:text-yellow-900 px-2 font-bold cursor-pointer'>Create an Account</Link></div>
 </form>
 )
 }

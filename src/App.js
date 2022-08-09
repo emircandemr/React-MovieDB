@@ -5,11 +5,12 @@ import { Route,Router,Routes } from "react-router-dom";
 import Watched from "./components/Watched";
 import Watchlist from "./components/Watchlist";
 import Home from "./components/loginPage/home";
-
+import toast, { Toaster } from 'react-hot-toast';
 
 const App = () => {
   return (
       <div>
+        <Toaster position="top-right"/>
         <Routes>
           <Route path="/home/:id" element={<Home/>} />
           <Route path="/" element={<ListItem/>} />
