@@ -15,7 +15,9 @@ export const Context = ({children}) => {
     
     const {user} = useSelector(state => state.auth)
 
+    const [query, setQuery] = useState("");
     const [results , setResults] = useState([])
+    const [homeMovie , setHomeMovie] = useState([])
     
     const [state,dispatch] = useReducer(Reducer,reducerState);
 
@@ -78,7 +80,10 @@ export const Context = ({children}) => {
         watchList : state.watchList,
         watched : state.watched,
         removeWatched,
-        removeWatchlist
+        removeWatchlist,
+        homeMovie , 
+        setHomeMovie,
+        query, setQuery
     }
 
     return (

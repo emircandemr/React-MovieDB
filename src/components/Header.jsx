@@ -9,8 +9,8 @@ import { useNavigate } from 'react-router-dom';
 
 function Header() {
 
-  const [query, setQuery] = useState("");
-  const {results,setResults,addMovieWatchList} = useContextMovie()
+  // const [query, setQuery] = useState("");
+  const {setResults , setHomeMovie,query, setQuery} = useContextMovie()
   
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -43,7 +43,7 @@ function Header() {
     .then((res) => res.json())
     .then((data) => {
       if(!data.errors){
-        setResults(data.results)
+        setHomeMovie(data.results)
       }
     })
   }
