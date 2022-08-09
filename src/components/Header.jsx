@@ -48,9 +48,9 @@ function Header() {
     })
   }
 
-  if(!query){
-    firstMovie()
-  }
+  useEffect( () => {
+      firstMovie()
+  },[])
 
   return (
     <div className="w-full h-20 p-2 text-lg flex justify-around items-center text-white bg-gradient-to-r from-[#0f0f0f] to-[#131210ee] ">
