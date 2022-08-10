@@ -55,7 +55,7 @@ function Header() {
   return (
     <div className="w-full h-36 xl:h-20 p-3 text-lg flex flex-col xl:flex-row justify-around items-center text-white bg-gradient-to-r from-[#0f0f0f] to-[#131210ee] ">
       <Link to="/"><div className="hover:text-[#aa8c4fee] " onClick={()=>{setQuery("")}} > <i className="fa-solid fa-video"></i> MovieDB</div></Link>
-      <div className="flex justify-evenly items-center w-2/3 mb-2 xl:mb-0 xl:w-1/6  ">
+      <div className="flex justify-evenly items-center w-11/12 mb-2 xl:mb-0 xl:w-1/6  ">
         <Link to="/watched"><div className="px-3 py-1 bg-gradient-to-r from-[#a07b025b] to-[#7a62115b]  rounded-lg hover:bg-[#755d2dee] hover:text-white "><i class="fa-fw far fa-eye"></i> Watched </div></Link>
         <Link to="/watchlist"> <div className="px-3 py-1 bg-gradient-to-r from-[#a07b025b] to-[#7a62115b]  rounded-lg hover:bg-[#755d2dee] hover:text-white"><i class="fa-solid fa-square-plus"></i> Watchlist</div></Link>
       </div>
