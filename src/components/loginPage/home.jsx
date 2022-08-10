@@ -8,7 +8,7 @@ function Home() {
   const params = useParams()
   return (
     <div className="w-full h-screen flex justify-center items-center bg-gradient-to-r from-[#000000] to-[#131210ee] ">
-      <div className="w-3/4 lg:3/4 h-3/4 flex justify-center items-center bg-white border-1 border-[#6d58138e] rounded-2xl drop-shadow-2xl ">
+      <div className="w-3/4 h-5/6 lg:3/4 lg:h-3/4 flex justify-center items-center bg-white border-1 border-[#6d58138e] rounded-2xl drop-shadow-2xl ">
       <div className='w-0 lg:w-1/2 h-full  justify-center items-center'>
         <img className='w-full h-full rounded-2xl ' src='https://images.pexels.com/photos/5071340/pexels-photo-5071340.jpeg?cs=srgb&dl=pexels-dids-5071340.jpg&fm=jpg' />
       </div>

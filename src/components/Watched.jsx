@@ -9,7 +9,7 @@ function Watched() {
   return (
     <>
     <Header/>
-    <div className='min-h-[calc(100vh_-_5rem)] h-full px-12 sm:px-20 py-5 flex flex-wrap justify-center  bg-gradient-to-r from-[#030303] to-[#050505ee]'>
+    <div className='min-h-[calc(100vh_-_5rem)] h-full px-10 sm:px-20 py-5 flex flex-wrap justify-center  bg-gradient-to-r from-[#030303] to-[#050505ee]'>
 
       {watched.length > 0 ? watched.map((movie) => (
         

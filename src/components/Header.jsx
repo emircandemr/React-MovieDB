@@ -53,16 +53,16 @@ function Header() {
   },[])
 
   return (
-    <div className="w-full h-36 xl:h-20 p-3 py-5 sm:py-0 text-lg flex flex-col xl:flex-row justify-around items-center text-white bg-gradient-to-r from-[#0f0f0f] to-[#131210ee] ">
+    <div className="w-full h-44 xl:h-20 p-3 py-3 sm:py-0 text-lg flex flex-col xl:flex-row justify-around items-center text-white bg-gradient-to-r from-[#0f0f0f] to-[#131210ee] ">
       <Link to="/"><div className="hover:text-[#aa8c4fee] " onClick={()=>{setQuery("")}} > <i className="fa-solid fa-video"></i> MovieDB</div></Link>
       <div className="flex justify-evenly items-center w-11/12 mb-2 xl:mb-0 xl:w-1/6  ">
         <Link to="/watched"><div className="px-3 py-1 bg-gradient-to-r from-[#a07b025b] to-[#7a62115b]  rounded-lg hover:bg-[#755d2dee] hover:text-white "><i class="fa-fw far fa-eye"></i> Watched </div></Link>
         <Link to="/watchlist"> <div className="px-3 py-1 bg-gradient-to-r from-[#a07b025b] to-[#7a62115b]  rounded-lg hover:bg-[#755d2dee] hover:text-white"><i class="fa-solid fa-square-plus"></i> Watchlist</div></Link>
       </div>
-      <div className="flex justify-end items-center w-full md:w-3/4 xl:w-2/5  ">
-        <input className="w-3/4 rounded-xl mr-3 text-white px-3 py-1 outline-none bg-[#776c5b88]" value={query} type="text" placeholder="Search for movies or TV shows" onChange={onChange} />
+      <div className="flex flex-col sm:flex-row justify-end items-center w-full md:w-3/4 xl:w-2/5  ">
+        <input className="w-3/4 rounded-xl mr-3 mb-2 sm:mb-0 text-white px-3 py-1 outline-none bg-[#776c5b88]" value={query} type="text" placeholder="Search for movies or TV shows" onChange={onChange} />
         <div className="flex items-center">
-          {user.email ? <span className="text-center ml-2  items-center">{user.email}</span> : ""}
+          {user.email ? <span className="text-center  ml-2 items-center">{user.email}</span> : ""}
           <div className="px-3 py-1 ml-5 bg-gradient-to-r from-[#a07b025b] to-[#7a62115b]  rounded-lg hover:bg-[#755d2dee] cursor-pointer" onClick={handleLogout}>{user ? "Logout" : "Login" }</div>
         </div>
       </div>

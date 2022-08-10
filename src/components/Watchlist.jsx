@@ -9,7 +9,7 @@ function Watchlist() {
   return (
     <>
     <Header/>
-    <div className='min-h-[calc(100vh_-_5rem)] h-full px-12 sm:px-20 py-5 flex flex-wrap justify-center  bg-gradient-to-r from-[#030303] to-[#050505ee]'>
+    <div className='min-h-[calc(100vh_-_5rem)] h-full px-10 sm:px-20 py-5 flex flex-wrap justify-center  bg-gradient-to-r from-[#030303] to-[#050505ee]'>
       {watchList.length > 0 ? watchList.map((movie) => (
         
         <MovieResultCard title={movie.title} img={movie.poster_path} year={movie.release_date} imdb={movie.vote_average} movie={movie} remove={removeWatchlist} />
