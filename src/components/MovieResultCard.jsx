@@ -4,7 +4,7 @@ import { useContextMovie } from '../context/ContextApi'
 function MovieResultCard(props) {
     const {removeWatched,addMovieWatched} = useContextMovie()
   return (
-    <div className='group ease-in-out w-72 max-h-[34rem] relative m-3 border-1 bg-gradient-to from-[#000000] to-[#131210ee] text-white border-[#6d58138e] rounded-3xl'>
+    <div className='w-9/12 sm:w-80 max-h-[34rem] relative m-3 border-1 bg-gradient-to from-[#000000] to-[#131210ee] text-white border-[#6d58138e] rounded-3xl'>
         <div className='h-96 mt-2 text-center flex justify-center '>
             <img className='rounded-2xl' src={props.img ? `https://image.tmdb.org/t/p/w200${props.img}` : "https://avmmagazin.com/upload/blog/20220401195546-2022nin-en-cok-beklenen-filmleri.jpg"} alt="deneme" />
         </div>

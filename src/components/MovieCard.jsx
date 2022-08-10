@@ -7,7 +7,7 @@ function MovieCard(props) {
   const storedMovie = watchList.find( (o) => o.id === props.movie.id) || watched.find( (o) => o.id === props.movie.id) 
     
   return (
-    <div className='group ease-in-out w-72 max-h-[34rem] relative m-3 border-1 bg-gradient-to from-[#000000] to-[#131210ee]  text-white border-[#6d58138e] rounded-3xl'>
+    <div className='w-9/12 sm:w-80 max-h-[34rem] relative m-3 border-1 bg-gradient-to from-[#000000] to-[#131210ee]  text-white border-[#6d58138e] rounded-3xl'>
         <div className='h-96 mt-2 text-center flex justify-center '>
             <img className='rounded-2xl' src={props.img ? `https://image.tmdb.org/t/p/w200${props.img}` : "https://cdn2.vectorstock.com/i/1000x1000/53/36/vintage-cinema-poster-vector-20815336.jpg"} alt="deneme" />
         </div>
@@ -24,7 +24,7 @@ function MovieCard(props) {
                 </div>
             </div>
         </div>
-        <div className='flex justify-around  h-12 items-center '>
+        <div className='flex justify-around h-12 items-center '>
             <button disabled={storedMovie} className={`px-3 py-1 mb-3  bg-gradient-to-r from-[#a07b025b] to-[#7a62115b] rounded-lg hover:bg-gradient-to-r  ${storedMovie ? "opacity-30" : "cursor-pointer hover:bg-[#755d2dee]"} `} onClick={()=> {addMovieWatchList(props.movie)}}  ><i className="fa-solid fa-bookmark text-yellow-600"></i> Watchlist </button>
             <button disabled={storedMovie} className={`px-3 py-1 mb-3  bg-gradient-to-r from-[#a07b025b] to-[#7a62115b] rounded-lg hover:bg-gradient-to-r  ${storedMovie ? "opacity-30" : "cursor-pointer hover:bg-[#755d2dee]"} `} onClick={() => {addMovieWatched(props.movie)}}><i className="fa-solid fa-thumbs-up text-yellow-600"></i> Watched</button>
             
