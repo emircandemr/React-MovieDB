@@ -34,7 +34,7 @@ const inputs = [
     {
       id: 1,
       name: "email",
-      label: "Emmail",
+      label: "Email",
       type: "text",
       placeholder: "Enter your username",
       value : values.email,
